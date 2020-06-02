@@ -179,7 +179,7 @@ def generate_population():
 # On utilise la fitness pour pouvoir les trier et ensuite on tire au sort n/2 couples 
 def selection():
     populations.sort(key=lambda x: x._fitness, reverse=True)
-    return populations[: NB_POPULATION_GENERE/2]
+    return populations[: round(NB_POPULATION_GENERE/2)]
     # for x in range(round(NB_POPULATION_GENERE / 2), NB_POPULATION_GENERE - 1):
     #     del populations[round(NB_POPULATION_GENERE / 2)]
 
@@ -231,8 +231,6 @@ def init():
         mutations()
         print(len(populations))
 
-        if(max_fitness() >= 99):
-            reussi = 1
         
 
 
